@@ -10,6 +10,7 @@ function list_animals (){
     $all_animals = get_all_animals();
     foreach($all_animals as $animal){
         echo $animal['name']. ',' . '<br>';
+        animal_description($animal);
     }
 }
 list_animals();
@@ -41,7 +42,7 @@ function animal_description($one_animal){
     echo 'Población estimada: ';
     echo $one_animal  ['estimated_population'] . '<br>';
     echo 'Programas de conservación:'. '<br>';
-    foreach ($cons_program as  $value) {
+    foreach ($cons_program as $value) {
         echo '- ' . $value . '<br>';
     }
 }
