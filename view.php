@@ -36,10 +36,12 @@ function animal_description($one_animal)
     echo 'País: ';
     echo $one_animal ['country'] . '<br>';
     echo 'Estado: ';
-    echo $one_animal ['iucn_status'] . '<br>';
+    $estado = $one_animal ['iucn_status'];
+    echo uicn_status($estado) . '<br>';
     echo 'Población estimada: ';
     echo $one_animal  ['estimated_population'] . '<br>';
 
 }
 animal_description($one_animal);
+
 
