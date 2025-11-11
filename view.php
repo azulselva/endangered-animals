@@ -22,3 +22,24 @@ function uicn_status($key){
     return $uicn_status[$key];
 }
 echo uicn_status('EX');
+
+
+
+
+$Animal_description = get_all_animals();
+$one_animal = $Animal_description[0];
+function animal_description($one_animal)
+{
+    echo '<br>';
+    echo $one_animal['name'] . '<br> <br>';
+    echo $one_animal['description'] . '<br> <br>';
+    echo 'País: ';
+    echo $one_animal ['country'] . '<br>';
+    echo 'Estado: ';
+    echo $one_animal ['iucn_status'] . '<br>';
+    echo 'Población estimada: ';
+    echo $one_animal  ['estimated_population'] . '<br>';
+
+}
+animal_description($one_animal);
+
