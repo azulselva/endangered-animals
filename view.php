@@ -24,12 +24,12 @@ function uicn_status($key){
 echo uicn_status('EX');
 
 
-
-
 $Animal_description = get_all_animals();
 $one_animal = $Animal_description[0];
-function animal_description($one_animal)
-{
+
+function animal_description($one_animal){
+    $cons_program = $one_animal['conservation_programs'];
+
     echo '<br>';
     echo $one_animal['name'] . '<br> <br>';
     echo $one_animal['description'] . '<br> <br>';
@@ -40,7 +40,10 @@ function animal_description($one_animal)
     echo uicn_status($estado) . '<br>';
     echo 'Población estimada: ';
     echo $one_animal  ['estimated_population'] . '<br>';
-
+    echo 'Programas de conservación:'. '<br>';
+    foreach ($cons_program as  $value) {
+        echo '- ' . $value . '<br>';
+    }
 }
 animal_description($one_animal);
 
